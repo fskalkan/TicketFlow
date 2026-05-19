@@ -14,5 +14,6 @@ namespace TicketFlow.Domain.Entities
         public DateTime? UpdatedDate { get; set; }
         public bool IsDeleted { get; set; } = false;
         public User User { get; set; } = null!;
+
     }
 }
