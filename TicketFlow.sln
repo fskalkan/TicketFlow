@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketFlow.Domain", "TicketFlow.Domain\TicketFlow.Domain.csproj", "{6B1AF973-0B84-4BC2-BFB0-DAB35A89925E}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketFlow.Infrastructure", "TicketFlow.Infrastructure\TicketFlow.Infrastructure.csproj", "{900B969A-5BB2-4E6A-A3B5-BA54C7275DF3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketFlow.API", "TicketFlow.API\TicketFlow.API.csproj", "{5E0E16B0-B795-4116-9AAE-8F0FD4822DC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketFlow.Tests", "TicketFlow.Tests\TicketFlow.Tests.csproj", "{A69DB019-169A-4CE1-A11C-34AB804B17E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5E0E16B0-B795-4116-9AAE-8F0FD4822DC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E0E16B0-B795-4116-9AAE-8F0FD4822DC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E0E16B0-B795-4116-9AAE-8F0FD4822DC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A69DB019-169A-4CE1-A11C-34AB804B17E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A69DB019-169A-4CE1-A11C-34AB804B17E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A69DB019-169A-4CE1-A11C-34AB804B17E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A69DB019-169A-4CE1-A11C-34AB804B17E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
