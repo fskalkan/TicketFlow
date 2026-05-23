@@ -29,11 +29,8 @@ namespace TicketFlow.Application.Services
         {
             var ticket = await _ticketRepository.GetByIdAsync(id);
 
-            if (ticket is null)
+            if (ticket is null || ticket.UserId != userId)
                 throw new NotFoundException("Ticket not found.");
-
-            if (ticket.UserId != userId)
-                throw new UnauthorizedException("You are not authorized to access this ticket.");
 
             return _mapper.Map<TicketResponseDto>(ticket);
         }
@@ -55,11 +52,8 @@ namespace TicketFlow.Application.Services
         {
             var ticket = await _ticketRepository.GetByIdAsync(id);
 
-            if (ticket is null)
+            if (ticket is null || ticket.UserId != userId)
                 throw new NotFoundException("Ticket not found.");
-
-            if (ticket.UserId != userId)
-                throw new UnauthorizedException("You are not authorized to update this ticket.");
 
             if (!string.IsNullOrWhiteSpace(updateTicketDto.Title))
                 ticket.Title = updateTicketDto.Title.Trim();
@@ -84,11 +78,8 @@ namespace TicketFlow.Application.Services
         {
             var ticket = await _ticketRepository.GetByIdAsync(id);
 
-            if (ticket is null)
+            if (ticket is null || ticket.UserId != userId)
                 throw new NotFoundException("Ticket not found.");
-
-            if (ticket.UserId != userId)
-                throw new UnauthorizedException("You are not authorized to delete this ticket.");
 
             await _ticketRepository.DeleteAsync(ticket);
         }

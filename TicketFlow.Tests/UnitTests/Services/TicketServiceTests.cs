@@ -9,7 +9,7 @@ using TicketFlow.Domain.Entities;
 using TicketFlow.Domain.Enums;
 using Xunit;
 
-namespace TicketFlow.Tests.Services;
+namespace TicketFlow.Tests.UnitTests.Services;
 
 public class TicketServiceTests
 {
@@ -104,7 +104,7 @@ public class TicketServiceTests
 
 
     [Fact]
-    public async Task GetByIdAsync_ShouldThrowUnauthorizedException_WhenUserDoesNotOwnTicket()
+    public async Task GetByIdAsync_ShouldThrowNotFoundException_WhenUserDoesNotOwnTicket()
     {
         // Arrange
         var ticketId = 1;
@@ -127,8 +127,8 @@ public class TicketServiceTests
         var act = async () => await _ticketService.GetByIdAsync(ticketId, currentUserId);
 
         // Assert
-        await act.Should().ThrowAsync<UnauthorizedException>()
-            .WithMessage("You are not authorized to access this ticket.");
+        await act.Should().ThrowAsync<NotFoundException>()
+            .WithMessage("Ticket not found.");
 
         _ticketRepositoryMock.Verify(r => r.GetByIdAsync(ticketId), Times.Once);
     }
@@ -281,7 +281,7 @@ public class TicketServiceTests
     }
 
     [Fact]
-    public async Task UpdateAsync_ShouldThrowUnauthorizedException_WhenUserDoesNotOwnTicket()
+    public async Task UpdateAsync_ShouldThrowNotFoundException_WhenUserDoesNotOwnTicket()
     {
         // Arrange
         var ticketId = 1;
@@ -314,8 +314,8 @@ public class TicketServiceTests
         var act = async () => await _ticketService.UpdateAsync(ticketId, currentUserId, updateDto);
 
         // Assert
-        await act.Should().ThrowAsync<UnauthorizedException>()
-            .WithMessage("You are not authorized to update this ticket.");
+        await act.Should().ThrowAsync<NotFoundException>()
+            .WithMessage("Ticket not found.");
 
         _ticketRepositoryMock.Verify(r => r.GetByIdAsync(ticketId), Times.Once);
 
@@ -447,7 +447,7 @@ public class TicketServiceTests
     }
 
     [Fact]
-    public async Task DeleteAsync_ShouldThrowUnauthorizedException_WhenUserDoesNotOwnTicket()
+    public async Task DeleteAsync_ShouldThrowNotFoundException_WhenUserDoesNotOwnTicket()
     {
         // Arrange
         var ticketId = 1;
@@ -472,8 +472,8 @@ public class TicketServiceTests
         var act = async () => await _ticketService.DeleteAsync(ticketId, currentUserId);
 
         // Assert
-        await act.Should().ThrowAsync<UnauthorizedException>()
-            .WithMessage("You are not authorized to delete this ticket.");
+        await act.Should().ThrowAsync<NotFoundException>()
+            .WithMessage("Ticket not found.");
 
         _ticketRepositoryMock.Verify(r => r.GetByIdAsync(ticketId), Times.Once);
 

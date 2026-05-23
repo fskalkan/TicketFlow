@@ -10,7 +10,7 @@ using TicketFlow.Application.Services;
 using TicketFlow.Domain.Entities;
 using Xunit;
 
-namespace TicketFlow.Tests.Services;
+namespace TicketFlow.Tests.UnitTests.Services;
 
 public class AuthServiceTests
 {
