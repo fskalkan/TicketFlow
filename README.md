@@ -2,7 +2,7 @@
 
 TicketFlow, ASP.NET Core Web API ile geliştirilmiş bir ticket yönetim API projesidir.
 
-Bu projede kullanıcı kayıt/giriş işlemleri, JWT tabanlı kimlik doğrulama, kullanıcıya ait ticket yönetimi, katmanlı mimari, global exception handling, unit test ve integration test yapıları uygulanmıştır.
+Bu projede kullanıcı kayıt/giriş işlemleri, JWT tabanlı kimlik doğrulama, kullanıcıya ait ticket yönetimi, katmanlı mimari, global exception handling, request validation, unit test ve integration test yapıları uygulanmıştır.
 
 ## Kullanılan Teknolojiler
 
@@ -13,6 +13,7 @@ Bu projede kullanıcı kayıt/giriş işlemleri, JWT tabanlı kimlik doğrulama,
 - JWT Authentication
 - Swagger
 - AutoMapper
+- FluentValidation
 - xUnit
 - Moq
 - FluentAssertions
@@ -32,6 +33,7 @@ Bu projede kullanıcı kayıt/giriş işlemleri, JWT tabanlı kimlik doğrulama,
 - Kullanıcının yalnızca kendi ticketlarına erişebilmesi
 - Katmanlı mimari
 - Global exception handling
+- FluentValidation ile request DTO validasyonları
 - Unit testler
 - Integration testler
 
@@ -99,7 +101,7 @@ Projeyi çalıştırmadan önce `TicketFlow.API` projesi altında bulunan `appse
 
 Projede unit test ve integration test yapıları bulunmaktadır.
 
-Unit testlerde servis katmanındaki business logic test edilmiştir.
+Unit testlerde servis katmanındaki business logic ve FluentValidation validator kuralları test edilmiştir.
 
 Integration testlerde API endpointleri gerçek HTTP istekleri gibi test edilmiştir. Testlerde gerçek veritabanı yerine InMemory Database kullanılmıştır.
 
