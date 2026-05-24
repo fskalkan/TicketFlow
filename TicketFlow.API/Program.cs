@@ -12,10 +12,14 @@ using TicketFlow.Infrastructure.Repositories;
 using TicketFlow.Infrastructure.Services;
 using Microsoft.OpenApi.Models;
 using AutoMapper;
+using TicketFlow.Application.Validators.Auth;
+using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+
+builder.Services.AddValidatorsFromAssemblyContaining<RegisterUserDtoValidator>();
 
 builder.Services.AddEndpointsApiExplorer();
 
